@@ -1,0 +1,120 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* 讓標題和搜索欄兩者對齊兩端 */
+    align-items: center;
+    position: relative;
+}
+h1 {
+    margin: 0;
+}
+
+#search-bar {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    width: 250px; /* 可以調整寬度 */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* 這行可以將搜尋框置中 */
+}
+
+/* nav 左對齊 */
+nav {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px 0;
+    position: absolute;
+    left: 0;
+    top: 80px; /* 調整nav的位置，根據你的header的高度 */
+    width: 100%;
+    text-align: left;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #666;
+    border-radius: 5px;
+}
+.hero { background: url('https://picsum.photos/1200/400?grayscale') no-repeat center center; background-size: cover; height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2em; font-weight: bold; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; padding: 20px; }
+.gallery img { width: 100%; height: auto; border-radius: 8px; }
+.about, .contact { padding: 30px; background-color: #f5f5f5; text-align: center; }
+footer { background-color: #222; color: white; text-align: center; padding: 15px; }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 每行4張圖 */
+    gap: 15px;
+    padding: 20px;
+}
+.image-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 0 0 8px 8px; /* 圓角 */
+}
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 平板或手機變2張 */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 手機直式只顯示一張 */
+    }
+}
+.tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 10px 0;
+}
+
+.tag {
+    background-color: #eee;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tag:hover,
+.tag.active {
+    background-color: #333;
+    color: white;
+}
+
+
